@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>介護、頑張りすぎていませんか？チェック｜合同会社しっぽ</title>
+<meta name="description" content="老犬・シニア犬の介護をしているご家族のための1分チェック。いまの負担の目安と、合いそうな支え方をご案内します。北九州市の訪問アニマルケア 合同会社しっぽ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brown:#603912; --cream:#FAF8ED; --beige:#C7B199; --beige-l:#EFE7DA;
+  --ink:#3b2a1a; --muted:#7a6a58; --line:#06C755; --white:#fff;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--cream);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 48px}
+header{padding:20px 0 8px;text-align:center}
+.brand{font-size:13px;color:var(--muted);letter-spacing:.08em}
+h1{font-family:"Noto Serif JP",serif;color:var(--brown);font-size:24px;line-height:1.5;margin:10px 0 6px}
+.lead{font-size:15px;margin:0 0 4px}
+.sub{font-size:13px;color:var(--muted)}
+.card{background:var(--white);border:1px solid var(--beige-l);border-radius:14px;padding:20px 18px;margin-top:18px}
+.step{font-size:12px;color:var(--beige);font-weight:700;letter-spacing:.1em}
+h2{font-size:17px;color:var(--brown);margin:2px 0 12px}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 12px;border:1px solid var(--beige-l);border-radius:10px;margin-bottom:8px;cursor:pointer;font-size:15px;line-height:1.6;background:#fffdf8}
+.opt input{margin-top:4px;width:20px;height:20px;accent-color:var(--brown);flex:0 0 auto}
+.opt:has(input:checked){border-color:var(--brown);background:#f6efe4}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:16px;font-size:17px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none}
+.btn-main{background:var(--brown);color:var(--white);margin-top:20px}
+.btn-main:disabled{opacity:.4;cursor:default}
+.btn-line{background:var(--line);color:var(--white);margin-top:14px}
+.btn-tel{background:var(--white);color:var(--brown);border:2px solid var(--brown);margin-top:10px;font-size:16px}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+#result{display:none}
+.level{font-family:"Noto Serif JP",serif;font-size:21px;color:var(--brown);line-height:1.6;margin:4px 0 10px}
+.meter{display:flex;gap:6px;margin:10px 0 14px}
+.meter span{flex:1;height:8px;border-radius:4px;background:var(--beige-l)}
+.meter span.on{background:var(--brown)}
+.msg{font-size:15px}
+.svc{border-left:4px solid var(--beige);padding:10px 12px;margin:12px 0;background:#fffdf8;border-radius:0 8px 8px 0}
+.svc b{color:var(--brown);font-size:16px}
+.svc p{margin:4px 0 0;font-size:14px}
+.fee{font-size:13px;color:var(--muted);margin-top:4px}
+.links a{display:block;color:var(--brown);font-size:14px;padding:8px 0;border-bottom:1px dashed var(--beige-l)}
+.quote{font-family:"Noto Serif JP",serif;color:var(--brown);text-align:center;font-size:17px;margin:20px 0 4px;line-height:1.7}
+.area{font-size:13px;color:var(--muted);text-align:center;margin-top:8px}
+.again{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:13px;margin:18px auto 0;display:block;cursor:pointer}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:28px}
+footer a{color:var(--muted)}
+</style>
+<script src="https://unpkg.com/budoux/bundle/budoux-ja.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">北九州市の訪問アニマルケア　合同会社しっぽ</div>
+  <h1>介護、頑張りすぎて<br>いませんか？</h1>
+  <p class="lead">老犬・シニア犬と暮らすご家族のための<br>1分チェックです。</p>
+  <p class="sub">当てはまるものを選ぶだけ。<br>お名前などの入力はありません。</p>
+</header>
+
+<form id="q">
+<div class="card">
+  <div class="step">STEP 1</div>
+  <h2>ここ1週間のあなたについて</h2>
+  <label class="opt"><input type="checkbox" name="c" value="sleep"><budoux-ja>夜、まとめて眠れた日が少ない</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="out"><budoux-ja>そばを離れるのが心配で、外出を控えている</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="alone"><budoux-ja>介護のことを相談できる人がいない</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="must"><budoux-ja>「自分がやらなきゃ」と思っている</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="night"><budoux-ja>夜鳴き・徘徊で、夜に何度も起きている</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="care"><budoux-ja>床ずれ・排泄・食事など、お世話のやり方に迷うことがある</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="hosp"><budoux-ja>通院の付き添いが負担になっている</budoux-ja></label>
+  <label class="opt"><input type="checkbox" name="c" value="tears"><budoux-ja>イライラしたり、涙が出たりすることがある</budoux-ja></label>
+</div>
+
+<div class="card">
+  <div class="step">STEP 2</div>
+  <h2>わんちゃんの、いまの様子に近いものは？</h2>
+  <label class="opt"><input type="radio" name="d" value="weak"><budoux-ja>足腰が弱ってきた・できないことが増えてきた</budoux-ja></label>
+  <label class="opt"><input type="radio" name="d" value="dementia"><budoux-ja>夜鳴き・徘徊など、認知症のような様子がある</budoux-ja></label>
+  <label class="opt"><input type="radio" name="d" value="bed"><budoux-ja>寝たきり・ほとんど立ち上がれない</budoux-ja></label>
+  <label class="opt"><input type="radio" name="d" value="end"><budoux-ja>病気で療養中・終末期と言われている</budoux-ja></label>
+</div>
+
+<button type="submit" class="btn btn-main" id="go" disabled>結果を見る</button>
+<p class="note">※このチェックは負担の「目安」を知るためのもので、医学的な診断ではありません。</p>
+</form>
+
+<section id="result">
+<div class="card">
+  <div class="step">RESULT</div>
+  <div class="meter" id="meter"><span></span><span></span><span></span></div>
+  <div class="level" id="level"></div>
+  <div class="msg" id="msg"></div>
+</div>
+
+<div class="card">
+  <h2>あなたに合いそうな支え方</h2>
+  <div id="svcs"></div>
+  <p class="note">料金は、しっぽの料金表（2026年8月）の幅をもとにした目安です。わんちゃんの大きさや状態で変わります。正確な金額は、無料のカウンセリングでご案内します。</p>
+</div>
+
+<div class="card" id="linkcard">
+  <h2>いまのお悩みに近い記事</h2>
+  <div class="links" id="links"></div>
+</div>
+
+<p class="quote">ひとりじゃないよ。<br>頑張らなくていいよ。<br>しっぽに声を届けて。</p>
+<a class="btn btn-line" id="lineBtn" href="https://line.me/R/ti/p/%40055sflba" target="_blank" rel="noopener">LINEで話してみる（相談無料）</a>
+<a class="btn btn-tel" id="telBtn" href="tel:093-982-0919">電話で相談する　093-982-0919</a>
+<p class="area">LINEでのご相談は全国どこからでも。<br>ご自宅への訪問は北九州市内（7区）です。<br>24時間対応・要予約（受付 8:00〜21:00）</p>
+<button class="again" id="again" type="button">もう一度チェックする</button>
+</section>
+
+<footer>
+  <a href="https://www.shippo21.com/" target="_blank" rel="noopener">合同会社しっぽ 公式サイト</a><br>
+  動物取扱業（保管）第16014号
+</footer>
+</div>
+
+<script>
+(function(){
+  // ── 計測（本番のみ）。GA4: G-P0HJW8Q09B（しっぽ用）
+  var isLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) || location.protocol === 'file:';
+  function track(name, params){ try{ if(window.gtag) gtag('event', name, params||{}); }catch(e){} }
+  if(!isLocal){
+    var s=document.createElement('script'); s.async=true; s.src='https://www.googletagmanager.com/gtag/js?id=G-P0HJW8Q09B';
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js', new Date()); gtag('config','G-P0HJW8Q09B');
+  }
+
+  var BASE='https://www.shippo21.com/post/';
+  var A={
+    respite:['レスパイトケアとは｜介護するご家族が休むための時間をつくる', BASE+'%E3%83%AC%E3%82%B9%E3%83%91%E3%82%A4%E3%83%88%E3%82%B1%E3%82%A2%E3%81%A8%E3%81%AF-%E4%BB%8B%E8%AD%B7%E3%81%99%E3%82%8B%E3%81%94%E5%AE%B6%E6%97%8F%E3%81%8C%E4%BC%91%E3%82%80%E3%81%9F%E3%82%81%E3%81%AE%E6%99%82%E9%96%93%E3%82%92%E3%81%A4%E3%81%8F%E3%82%8B'],
+    tsurai:['老犬の介護がつらいと感じたら｜抱え込まないための考え方', BASE+'%E8%80%81%E7%8A%AC%E3%81%AE%E4%BB%8B%E8%AD%B7%E3%81%8C%E3%81%A4%E3%82%89%E3%81%84%E3%81%A8%E6%84%9F%E3%81%98%E3%81%9F%E3%82%89-%E6%8A%B1%E3%81%88%E8%BE%BC%E3%81%BE%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9'],
+    zaiaku:['老犬の介護で罪悪感を感じてしまうとき｜自分を責めないための考え方', BASE+'%E8%80%81%E7%8A%AC%E3%81%AE%E4%BB%8B%E8%AD%B7%E3%81%A7%E7%BD%AA%E6%82%AA%E6%84%9F%E3%82%92%E6%84%9F%E3%81%98%E3%81%A6%E3%81%97%E3%81%BE%E3%81%86%E3%81%A8%E3%81%8D-%E8%87%AA%E5%88%86%E3%82%92%E8%B2%AC%E3%82%81%E3%81%AA%E3%81%84%E3%81%9F%E3%82%81%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9'],
+    yonaki:['老犬の夜鳴きが止まらない｜原因の見分け方と今夜からできる工夫', BASE+'%E8%80%81%E7%8A%AC%E3%81%AE%E5%A4%9C%E9%B3%B4%E3%81%8D%E3%81%AF%E3%81%AA%E3%81%9C%E8%B5%B7%E3%81%8D%E3%82%8B%EF%BC%9F%E8%80%83%E3%81%88%E3%82%89%E3%82%8C%E3%82%8B%E5%8E%9F%E5%9B%A0%E3%81%A8%E5%AE%B6%E5%BA%AD%E3%81%A7%E3%81%A7%E3%81%8D%E3%82%8B%E5%B7%A5%E5%A4%AB'],
+    guru:['老犬が同じ場所をぐるぐる歩く｜認知症のサインと向き合い方', BASE+'%E8%80%81%E7%8A%AC%E3%81%8C%E5%90%8C%E3%81%98%E5%A0%B4%E6%89%80%E3%82%92%E3%81%90%E3%82%8B%E3%81%90%E3%82%8B%E6%AD%A9%E3%81%8F-%E8%AA%8D%E7%9F%A5%E7%97%87%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%B3%E3%81%A8%E5%90%91%E3%81%8D%E5%90%88%E3%81%84%E6%96%B9'],
+    netakiri:['寝たきりになった老犬の介護｜床ずれ・体位変換・排泄のケア', BASE+'%E5%AF%9D%E3%81%9F%E3%81%8D%E3%82%8A%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E8%80%81%E7%8A%AC%E3%81%AE%E4%BB%8B%E8%AD%B7-%E5%BA%8A%E3%81%9A%E3%82%8C%E3%83%BB%E4%BD%93%E4%BD%8D%E5%A4%89%E6%8F%9B%E3%83%BB%E6%8E%92%E6%B3%84%E3%81%AE%E3%82%B1%E3%82%A2'],
+    tokozure:['老犬の床ずれを防ぐ｜寝床の作り方と体位変換の基本', BASE+'%E8%80%81%E7%8A%AC%E3%81%AE%E5%BA%8A%E3%81%9A%E3%82%8C%E3%82%92%E9%98%B2%E3%81%90-%E5%AF%9D%E5%BA%8A%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9%E3%81%A8%E4%BD%93%E4%BD%8D%E5%A4%89%E6%8F%9B%E3%81%AE%E5%9F%BA%E6%9C%AC'],
+    tsuin:['老犬の通院に付き添ってもらう｜病院帯同という選択肢', BASE+'%E8%80%81%E7%8A%AC%E3%81%AE%E9%80%9A%E9%99%A2%E3%81%AB%E4%BB%98%E3%81%8D%E6%B7%BB%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%86-%E7%97%85%E9%99%A2%E5%B8%AF%E5%90%8C%E3%81%A8%E3%81%84%E3%81%86%E9%81%B8%E6%8A%9E%E8%82%A2'],
+    rusu:['共働きで日中に誰もいない家の老犬介護｜留守中の備えと頼れる手', BASE+'%E5%85%B1%E5%83%8D%E3%81%8D%E3%81%A7%E6%97%A5%E4%B8%AD%E3%81%AB%E8%AA%B0%E3%82%82%E3%81%84%E3%81%AA%E3%81%84%E5%AE%B6%E3%81%AE%E8%80%81%E7%8A%AC%E4%BB%8B%E8%AD%B7-%E7%95%99%E5%AE%88%E4%B8%AD%E3%81%AE%E5%82%99%E3%81%88%E3%81%A8%E9%A0%BC%E3%82%8C%E3%82%8B%E6%89%8B'],
+    mitori:['愛犬を自宅で看取るために｜準備しておきたいこと', BASE+'%E6%84%9B%E7%8A%AC%E3%82%92%E8%87%AA%E5%AE%85%E3%81%A7%E7%9C%8B%E5%8F%96%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AB-%E6%BA%96%E5%82%99%E3%81%97%E3%81%A6%E3%81%8A%E3%81%8D%E3%81%9F%E3%81%84%E3%81%93%E3%81%A8']
+  };
+  // 料金はサービス情報.md（2026-08-28 確定版）の幅のみ。2時間の場合＝1時間の幅×2
+  var SVC={
+    respite:{name:'レスパイトケア', why:'ご家族が休む時間をつくるためのケアです。その間、わんちゃんにはスタッフが付き添い、いつものお家で安心して過ごしてもらいます。', fee:'1時間 6,000円〜15,000円（2時間なら 12,000円〜30,000円）'},
+    care:{name:'高齢犬・シニア犬の訪問介護・介助', why:'食事・排泄・寝返りなど、毎日のお世話をご自宅で一緒に行います。やり方に迷うところも、その場でお伝えできます。', fee:'1時間 5,500円〜12,000円'},
+    end:{name:'療養犬・ターミナルケアの訪問介護', why:'体調を見ながら、ご自宅での療養や最期の時間を支えます。急な変化のときも、可能な限り対応しております。', fee:'1時間 6,500円〜15,000円'},
+    hosp:{name:'病院帯同サービス', why:'通院に付き添い、日々の様子を獣医師の先生へお伝えするお手伝いをします。', fee:'1回 10,000円〜15,000円'}
+  };
+
+  var form=document.getElementById('q'), go=document.getElementById('go');
+  var started=false;
+  form.addEventListener('change',function(){
+    if(!started){started=true; track('sim_start');}
+    go.disabled = !form.querySelector('input[name=d]:checked');
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var c=[].map.call(form.querySelectorAll('input[name=c]:checked'),function(x){return x.value;});
+    var d=form.querySelector('input[name=d]:checked').value;
+    var n=c.length, has=function(v){return c.indexOf(v)>=0;};
+
+    var lv = n>=6?3 : n>=3?2 : 1;
+    var LV={
+      1:['いまは、なんとか回せている状態です','それでも、介護は少しずつ形が変わっていくものです。困りごとが増える前に「頼れる先」をひとつ持っておくと、いざというときに慌てずにすみます。'],
+      2:['少し、頑張りすぎているかもしれません','わんちゃんのために、毎日たくさんのことを引き受けていらっしゃいます。ご家族が休めているかどうかも、わんちゃんの安心につながります。一部を誰かに任せる時間をつくってみませんか。'],
+      3:['とても頑張っていらっしゃいます','眠れない夜や、ひとりで抱える時間が続くと、心も体も疲れてしまうのは自然なことです。あなたが少し休むことは、わんちゃんを置いていくことではありません。まずは、いまの状況をそのまま話してみてください。']
+    };
+    document.getElementById('level').innerHTML='<budoux-ja>'+LV[lv][0]+'</budoux-ja>';
+    document.getElementById('msg').innerHTML='<budoux-ja>'+LV[lv][1]+'</budoux-ja>';
+    [].forEach.call(document.querySelectorAll('#meter span'),function(s,i){s.className = i<lv?'on':'';});
+
+    // 合いそうな支え方（最大3つ）
+    var pick=[];
+    if(d==='end') pick.push('end');
+    if(has('sleep')||has('out')||has('alone')||has('must')||has('tears')||lv>=2) pick.push('respite');
+    if(d!=='end' && (has('care')||has('night')||d==='bed'||d==='dementia'||d==='weak')) pick.push('care');
+    if(has('hosp')) pick.push('hosp');
+    if(!pick.length) pick.push('care');
+    pick=pick.filter(function(v,i){return pick.indexOf(v)===i;}).slice(0,3);
+    document.getElementById('svcs').innerHTML=pick.map(function(k){var s=SVC[k];
+      return '<div class="svc"><b>'+s.name+'</b><p><budoux-ja>'+s.why+'</budoux-ja></p><div class="fee">目安：'+s.fee+'</div></div>';}).join('');
+
+    // 関連記事（最大3本）
+    var L=[];
+    if(lv>=2||has('must')||has('tears')) L.push('tsurai');
+    if(has('tears')||has('must')) L.push('zaiaku');
+    if(has('night')||d==='dementia') L.push(d==='dementia'?'guru':'yonaki');
+    if(has('care')||d==='bed') L.push(d==='bed'?'netakiri':'tokozure');
+    if(has('hosp')) L.push('tsuin');
+    if(has('out')) L.push('rusu');
+    if(d==='end') L.push('mitori');
+    L.push('respite');
+    L=L.filter(function(v,i){return L.indexOf(v)===i;}).slice(0,3);
+    document.getElementById('links').innerHTML=L.map(function(k){return '<a href="'+A[k][1]+'" target="_blank" rel="noopener">'+A[k][0]+'</a>';}).join('');
+
+    form.style.display='none';
+    var r=document.getElementById('result'); r.style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+    track('sim_result',{level:lv,checks:n,dog:d,services:pick.join(',')});
+  });
+
+  document.getElementById('lineBtn').addEventListener('click',function(){track('sim_line');});
+  document.getElementById('telBtn').addEventListener('click',function(){track('sim_tel');});
+  document.getElementById('again').addEventListener('click',function(){
+    form.reset(); go.disabled=true;
+    document.getElementById('result').style.display='none'; form.style.display='block';
+    window.scrollTo({top:0});
+  });
+})();
+</script>
+</body>
+</html>
