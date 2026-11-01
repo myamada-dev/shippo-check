@@ -63,7 +63,14 @@ function draw(){
  }
  const tail=(7-new Date(m.getFullYear(),m.getMonth(),last).getDay()-1);for(let i=0;i<tail;i++)h+="<td></td>";
  cal.innerHTML=h+"</tr>";
+ fit();
 }
+// 埋め込み枠より中身が高いときは全体を縮めて、枠の中にスクロールを出さない（Wixは画面幅に合わせて枠を縮めるため）
+function fit(){
+ const r=document.documentElement; r.style.zoom=1;
+ const h=r.scrollHeight; if(h>innerHeight+1) r.style.zoom=(innerHeight/h*0.99).toFixed(3);
+}
+addEventListener("resize",fit);
 prev.onclick=()=>{off--;draw()}; next.onclick=()=>{off++;draw()};
 const q=new URLSearchParams(location.search); if(q.get("m"))off=+q.get("m"); if(q.get("cta")==="0")cta.style.display="none";
 fetch("data.json?"+Date.now()).then(r=>r.json()).then(j=>{data=j;upd.textContent=`${j.updated.replace(/-/g,"/").replace(/^\d+\//,"").replace(/^0/,"")} 更新`;draw()}).catch(draw);
